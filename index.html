@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div
+      class="wrapper row w-75 h-75 container d-flex justify-content-center align-items-center mx-auto my-auto"
+    >
+      <div
+        class="signin col-6 d-flex flex-column align-items-center justify-content-center h-100"
+      >
+        <h1>Sign in</h1>
+        <div class="icons d-flex my-3">
+          <a href="https://www.facebook.com/login/" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.google.com" target="_blank">
+            <i class="fa-brands fa-google"></i>
+          </a>
+          <a href="https://www.linkedin.com/login/ar" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.github.com" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <form class="w-75">
+          <div class="d-flex">
+            <i class="fa-solid fa-at fs-5 me-3 d-flex align-items-center"></i>
+            <input
+              id="SIemail"
+              class="form-control my-2"
+              type="text"
+              placeholder="Email"
+              aria-label="default input example"
+              required
+            />
+          </div>
+          <div class="d-flex">
+            <i class="fa-solid fa-lock fs-5 me-3 d-flex align-items-center"></i>
+            <input
+              id="SIpass"
+              class="form-control"
+              type="password"
+              placeholder="Password"
+              aria-label="default input example"
+              required
+            />
+          </div>
+          <div class="div text-center my-3">
+            <span><a href="">Forgot password ?</a></span>
+          </div>
+          <button
+            id="signinbtn"
+            type="submit"
+            class="btn text-uppercase mx-auto my-4 d-flex justify-content-center w-50"
+          >
+            Sign in
+          </button>
+        </form>
+      </div>
+
+      <div
+        class="signup col-6 d-flex flex-column align-items-center justify-content-center h-100"
+      >
+        <h1>Sign up</h1>
+        <div class="icons d-flex my-3">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-google"></i>
+          <i class="fa-brands fa-linkedin-in"></i>
+          <i class="fa-brands fa-github"></i>
+        </div>
+        <form class="w-75">
+          <div class="d-flex">
+            <i class="fa-solid fa-user fs-5 me-3 d-flex align-items-center"></i>
+            <input
+              oninput="validationSU(this)"
+              id="SUname"
+              class="form-control my-2"
+              type="text"
+              placeholder="Name"
+              aria-label="default input example"
+              required
+            />
+          </div>
+          <div class="d-flex">
+            <i class="fa-solid fa-at fs-5 me-3 d-flex align-items-center"></i>
+            <input
+              oninput="validationSU(this)"
+              id="SUemail"
+              class="form-control my-2"
+              type="text"
+              placeholder="Email"
+              aria-label="default input example"
+              required
+            />
+          </div>
+          <div class="d-flex">
+            <i class="fa-solid fa-lock fs-5 me-3 d-flex align-items-center"></i>
+            <input
+              oninput="validationSU(this)"
+              id="SUpass"
+              class="form-control"
+              type="password"
+              placeholder="Password"
+              aria-label="default input example"
+              required
+            />
+          </div>
+          <button
+            id="signupbtn"
+            type="submit"
+            class="btn text-uppercase my-4 d-flex justify-content-center w-50 mx-auto"
+          >
+            Sign up
+          </button>
+        </form>
+      </div>
+
+      <div class="helloSU col-5 h-100">
+        <div
+          class="contentI d-flex flex-column align-items-center justify-content-center h-100"
+        >
+          <h1 class="mb-3">WELCOME!</h1>
+          <h6 class="mb-4">Don't have an account?!</h6>
+          <h6 class="mb-4">Please sign up</h6>
+          <button
+            id="Hsignup"
+            type="submit"
+            class="btn btn-primary text-uppercase mt-3"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+      <div class="helloSI col-5 h-100 d-none">
+        <div
+          class="contentU d-flex flex-column align-items-center justify-content-center h-100"
+        >
+          <h1 class="mb-3">Hello, Friend!</h1>
+          <h5 class="mb-4">WELCOME BACK!</h5>
+          <button
+            id="Hsignin"
+            type="submit"
+            class="btn btn-primary text-uppercase mt-3"
+          >
+            Sign in
+          </button>
+        </div>
+      </div>
+    </div>
+    <dialog id="rulesDialogEMAIL">
+      <h2>Rules for Entering a Valid Email</h2>
+      <ul>
+        <li>
+          📌 Must contain a <strong>username part</strong> before
+          <code>@</code>.
+        </li>
+        <li>
+          📌 Username may include: letters, digits, underscores <code>_</code>,
+          hyphens <code>-</code>, and dots <code>.</code>.
+        </li>
+        <li>📌 Must contain <code>@</code> exactly once.</li>
+        <li>
+          📌 Must contain a valid <strong>domain name</strong> after
+          <code>@</code>.
+        </li>
+        <li>
+          📌 Domain may include: letters, digits, hyphens <code>-</code>, and
+          dots <code>.</code>.
+        </li>
+        <li>
+          📌 Must have a <strong>top-level domain</strong> (TLD) like
+          <code>.com</code>, <code>.org</code>, etc.
+        </li>
+        <li>📌 TLD must be at least <strong>2 characters</strong> long.</li>
+      </ul>
+      <button onclick="closeDialog()" class="bg-black">Close</button>
+    </dialog>
+    <dialog id="rulesDialogPASS">
+      <h2>Rules for Entering a Valid Email</h2>
+      <ul>
+        <li>🔐 Must be at least <strong>8 characters</strong> long.</li>
+        <li>
+          🔐 Must include at least <strong>one letter</strong> (A–Z or a–z).
+        </li>
+        <li>🔐 Must include at least <strong>one number</strong> (0–9).</li>
+        <li>🔐 Should not contain spaces.</li>
+      </ul>
+      <button onclick="closeDialog()" class="bg-black">Close</button>
+    </dialog>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>

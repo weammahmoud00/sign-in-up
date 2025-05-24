@@ -1,0 +1,7 @@
+body{
+    background: #24353f !important;
+}
+.navbar button{
+    position: relative;
+    left: 90%;
+}
